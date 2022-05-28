@@ -10,8 +10,8 @@ function App() {
   const[city,setcity]=useState('')
   const [show,setShow]=useState(false)
 
-  const getData=()=>{
-    axios.get(`http://api.openweathermap.org/data/2.5/weather/?q=${city}&units=metric&appid=5a6a6ffc9545ecd677441929c3408bc3`).then((response)=>{
+  const getData=async()=>{
+   await axios.get(`http://api.openweathermap.org/data/2.5/weather/?q=${city}&units=metric&appid=5a6a6ffc9545ecd677441929c3408bc3`).then((response)=>{
       console.log(response.data);
       setdata(response.data.main)
     })
